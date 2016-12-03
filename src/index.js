@@ -146,7 +146,7 @@ export const Week = (props: WeekType) => {
     const isCurrentMonth = day.month() === focusedMonth.month();
     const isBlocked = isDateBlocked(day);
     const isSelected = isDateSelected();
-    const isDisabled = !isFutureDate || !isCurrentMonth || isBlocked;
+    const isDisabled =  isBlocked;
 
     const style = [
       styles.day,
