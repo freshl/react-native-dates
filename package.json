@@ -1,5 +1,5 @@
 {
-  "name": "react-native-dates",
+  "name": "react-native-dates-revised",
   "version": "2.0.2",
   "description": "Date and daterange picker for React Native (iOS and Android)",
   "main": "src/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/werein/react-native-dates.git"
+    "url": "git+https://github.com/eatonline/react-native-dates.git"
   },
   "keywords": [
     "react",
@@ -23,9 +23,9 @@
   "author": "We're in",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/werein/react-native-dates/issues"
+    "url": "https://github.com/eatonline/react-native-dates/issues"
   },
-  "homepage": "https://github.com/werein/react-native-dates#readme",
+  "homepage": "https://github.com/eatonline/react-native-dates#readme",
   "peerDependencies": {
     "moment": "^2.15.1",
     "moment-range": "^2.2.0",

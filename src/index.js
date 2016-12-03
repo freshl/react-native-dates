@@ -139,7 +139,7 @@ export const Week = (props: WeekType) => {
         }
         return (startDate && day.isSame(startDate)) || (endDate && day.isSame(endDate));
       }
-      return date && day.isSame(date);
+      return date && day.isSame(date,'day');
     };
 
     const isFutureDate = day.isSameOrAfter(today);
