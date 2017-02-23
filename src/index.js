@@ -15,6 +15,7 @@ type DatesType = {
   endDate: ?moment,
   focusedInput: 'startDate' | 'endDate',
   onDatesChange: (date: { date?: ?moment, startDate?: ?moment, endDate?: ?moment }) => void,
+  selectedColor: string,
   isDateBlocked: (date: moment) => boolean
 }
 
@@ -27,6 +28,7 @@ type MonthType = {
   currentDate: moment,
   focusedMonth: moment,
   onDatesChange: (date: { date?: ?moment, startDate?: ?moment, endDate?: ?moment }) => void,
+  selectedColor: string,
   isDateBlocked: (date: moment) => boolean
 }
 
@@ -40,7 +42,8 @@ type WeekType = {
   focusedMonth: moment,
   startOfWeek: moment,
   onDatesChange: (date: { date?: ?moment, startDate?: ?moment, endDate?: ?moment }) => void,
-  isDateBlocked: (date: moment) => boolean
+  isDateBlocked: (date: moment) => boolean,
+  selectedColor: string,
 }
 
 const styles = StyleSheet.create({
@@ -72,7 +75,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(255, 255, 255)'
   },
   daySelected: {
-    backgroundColor: 'rgb(52,120,246)'
   },
   dayText: {
     color: 'rgb(0, 0, 0)'
@@ -80,8 +82,8 @@ const styles = StyleSheet.create({
   dayDisabledText: {
     color: 'gray'
   },
-  daySeletedText: {
-    color: 'rgb(252, 252, 252)'
+  daySelectedText: {
+    color: 'rgb(255, 255, 255)'
   }
 });
 
@@ -114,7 +116,8 @@ export const Week = (props: WeekType) => {
     focusedMonth,
     startOfWeek,
     onDatesChange,
-    isDateBlocked
+    isDateBlocked,
+    selectedColor,
   } = props;
 
   const days = [];
@@ -151,13 +154,13 @@ export const Week = (props: WeekType) => {
     const style = [
       styles.day,
       isDisabled && styles.dayBlocked,
-      isSelected && styles.daySelected
+      isSelected && {backgroundColor: selectedColor}
     ];
 
     const styleText = [
       styles.dayText,
       isDisabled && styles.dayDisabledText,
-      isSelected && styles.daySeletedText
+      isSelected && styles.daySelectedText
     ];
 
     days.push(
@@ -187,6 +190,7 @@ export const Month = (props: MonthType) => {
     currentDate,
     focusedMonth,
     onDatesChange,
+    selectedColor,
     isDateBlocked
   } = props;
 
@@ -218,6 +222,7 @@ export const Month = (props: MonthType) => {
         startOfWeek={week}
         onDatesChange={onDatesChange}
         isDateBlocked={isDateBlocked}
+        selectedColor={selectedColor}
       />
     );
   });
@@ -269,6 +274,7 @@ export default class Dates extends Component {
           focusedMonth={this.state.focusedMonth}
           onDatesChange={this.props.onDatesChange}
           isDateBlocked={this.props.isDateBlocked}
+          selectedColor={this.props.selectedColor}
         />
       </View>
     );
