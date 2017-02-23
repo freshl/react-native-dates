@@ -3,6 +3,9 @@
 
 __React Native Date and date range picker / calendar for iOS and Android__
 
+## CHANGES
+* Add Year to calendar title (month view)
+
 ## API
 
 ```javascript
