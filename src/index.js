@@ -254,7 +254,7 @@ export default class Dates extends Component {
           <TouchableOpacity onPress={previousMonth}>
             <Text>{'< Previous'}</Text>
           </TouchableOpacity>
-          <Text>{this.state.focusedMonth.format('MMMM')}</Text>
+          <Text>{this.state.focusedMonth.format('MMMM YYYY')}</Text>
           <TouchableOpacity onPress={nextMonth}>
             <Text>{'Next >'}</Text>
           </TouchableOpacity>
